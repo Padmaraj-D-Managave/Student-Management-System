@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>View Information</title>
+        <link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+    </head>
+    <body>
+    	<div>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="/"><img class="border border-danger" src="student.png"
+				style="height: 5pc;"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link" href="/">Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="register">Add</a></li>
+					<li class="nav-item"><a class="nav-link" href="updateInfo">Update</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+        <div class="container" style="width: 40%;margin-top: 10%;">
+            <div class="card border border-primary rounded " style="align-items: center;padding: 5%;">
+            	<div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
+            	<div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+                <form action="/getStudent"  method="get">
+                
+                    <h4>
+                        Enter the Student ID
+                    </h4><br>
+                    <input type="text" name="kodId" placeholder="Enter the Student ID" required>
+                    <br><br>
+                    <button class="badge badge-pill badge-danger" type="submit" name="submit">Get Student</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
